@@ -8,7 +8,12 @@ var rng = RandomNumberGenerator.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	print(draw_roll([1,2,3,4,5,6],[.1, .2, .3, .2, .1, .1]))
+	print(draw_roll([1,2,3,4,5,6],[.1, .2, .3, .2, .1, .1]))
+	print(draw_roll([1,2,3,4,5,6],[.1, .2, .3, .2, .1, .1]))
+	print(draw_roll([1,2,3,4,5,6],[.1, .2, .3, .2, .1, .1]))
+	print(draw_roll([1,2,3,4,5,6],[.1, .2, .3, .2, .1, .1]))
+	print(draw_roll([1,2,3,4,5,6],[.1, .2, .3, .2, .1, .1]))
 
 
 func draw_roll(values, weights):
