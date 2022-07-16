@@ -2,6 +2,16 @@ extends Node
 class_name Dice
 var rng = RandomNumberGenerator.new()
 
+func dice_ability(value):
+	var dice_to_ability = {
+		1 : "add_life", 
+		2 : "jump_height",
+		3 : "increase_damage",
+		4 : "spawn_enemy",
+		5 : "damage_player",
+		6 : "jump_height",
+	}
+	return dice_to_ability[value]
 
 func draw_roll(values, weights): # Array Values, Array Weights
 	var totalWeight = 0
@@ -11,7 +21,7 @@ func draw_roll(values, weights): # Array Values, Array Weights
 		totalWeight += n
 	if totalWeight != 1:
 		rng.randomize()
-		return rng.randi_range(0, 6) # this works
+		return rng.randi_range(1, 6) # this works
 	else:
 		roll = rng.randf_range(0,1)
 		print(roll, " ROLL")
