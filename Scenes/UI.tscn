@@ -30,3 +30,13 @@ mouse_filter = 2
 texture_under = ExtResource( 1 )
 texture_progress = ExtResource( 2 )
 fill_mode = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 21.0
+margin_top = 27.0
+margin_right = 363.0
+margin_bottom = 206.0
+mouse_filter = 2
+text = "-everytime you jump, dice bar gets filled
+
+-Press E to reset the bar"
