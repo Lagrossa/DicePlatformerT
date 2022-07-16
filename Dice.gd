@@ -1,17 +1,29 @@
 extends Node
 class_name Dice
 var rng = RandomNumberGenerator.new()
+onready var player := get_owner() #returns null?
 
 func dice_ability(value):
 	var dice_to_ability = {
 		1 : "add_life", 
-		2 : "jump_height",
+		2 : jump_height(),
 		3 : "increase_damage",
 		4 : "spawn_enemy",
 		5 : "damage_player",
-		6 : "jump_height",
+		6 : jump_height(),
 	}
+#	match value: # I'm not sure if you can call functions from dictionaries in gdscript. If it doesn't work just use this
+#		1:
+#			print("lol")
+#		2:
+#			 player.JumpHeight
+#		_:
+#			player.JumpHeight = 500
 	return dice_to_ability[value]
+
+func jump_height():
+	player.JumpHeight += 50
+
 
 func draw_roll(values, weights): # Array Values, Array Weights
 	var totalWeight = 0

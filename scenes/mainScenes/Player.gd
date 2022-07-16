@@ -1,4 +1,5 @@
 extends KinematicBody2D
+class_name Player2
 
 export (int) var MaxHealth # the maximum ammount of health the player could have 
 export (int) var Health # the actual health
