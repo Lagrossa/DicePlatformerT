@@ -2,81 +2,102 @@ extends KinematicBody2D
 
 export (int) var MaxHealth # the maximum ammount of health the player could have 
 export (int) var Health # the actual health
-export (int) var Damage # How much damage the player deals
-export (int) var JumpAmmount = 1 # Jow often the Player can Jump(in air)
+export (int) var Damage # how much damage the player deals
+export (int) var JumpAmmount = 1 # how often the Player can Jump(in air)
 
-export (int) var speed = 150
-export (int) var Gravity = 400
-export (int) var Jumppower = 225
+onready var AnimPlayer = $AnimatedSprite
 
-const UP_VECTOR = Vector2(0, -1)
+var jumps = 0
 
-var jumps = 0 # needed to detect how often player already jumped, reset every time player is on ground
-var velocity = Vector2()
-var canMove = true
+export(float) var TimeToJumpPeak = .25
+export(int) var JumpHeight = 128
+export(int) var JumpDistance = 192
+
+const UP = Vector2(0,-1)
+const ACCELERATION = 3000
+var MAXSPEED: float
+var GRAVITY: float
+var JUMPSPEED: float
+var Velocity = Vector2()
+var InputVector = Vector2()
+var JumpAvailability: bool
+var JumpBufferPressed: bool
+var PlayerSaveFile = "user://PlayerStats.save"
+
+var Inventory = {
+	
+}
 
 
 func _ready():
-	pass
+	AnimPlayer.play("Idle")
+	GRAVITY = (2*JumpHeight)/pow(TimeToJumpPeak,2)
+	JUMPSPEED = GRAVITY * TimeToJumpPeak
+	MAXSPEED = JumpDistance / (2*TimeToJumpPeak)
 
 
 func _process(delta):
-	velocity.x = 0
-	
-	if is_on_ceiling():
-		velocity.y = 0
-	
+	movement(delta)
+
+
+# Do Movement
+func movement(delta):
 	if is_on_floor():
-		velocity.y = 0
+		JumpAvailability = true
 		jumps = 0
+		if JumpBufferPressed == true:
+			Jump()
+		
+	InputVector.x = Input.get_action_strength("right") - Input.get_action_strength("left")	
+	if InputVector.x > 0:
+		AnimPlayer.flip_h = false
+	if InputVector.x < 0:
+		AnimPlayer.flip_h = true
 	
-	if canMove == true:
-		velocity.y += Gravity * delta
+	Velocity.x = move_toward(Velocity.x, InputVector.x*MAXSPEED, ACCELERATION*delta)
 	
-	if canMove == true:
-		check_Input()
+	if jumps >= JumpAmmount:
+		JumpAvailability = false
 	
-	move_and_slide(velocity, UP_VECTOR)
-
-
-func check_Input():
-	movement() # Check for Input that moves the Player
-
-
-func movement():
-	if Input.is_action_pressed("right"):
-		velocity.x += 1 * speed
-		$AnimatedSprite.flip_h = false
-		$AnimatedSprite.play("run")
-	
-	if Input.is_action_just_released("right"):
-		$AnimatedSprite.play("Idle")
-	
-	if Input.is_action_pressed("left"):
-		velocity.x -= 1 * speed
-		$AnimatedSprite.flip_h = true
-		$AnimatedSprite.play("run")
-	
-	if Input.is_action_just_released("left"):
-		$AnimatedSprite.play("Idle")
-	
-	if Input.is_action_just_pressed("jump") and JumpAmmount >= 2 and jumps <= (JumpAmmount - 1) :
-		velocity.y = -Jumppower
-		jumps += 1
-	else:
-		if Input.is_action_just_pressed("jump") and is_on_floor() == true:
-			velocity.y = -Jumppower
+	if Input.is_action_just_pressed("jump"):
+		if JumpAvailability == true:
+			Jump()
 			jumps += 1
+	else:
+		Velocity.y += GRAVITY*delta
 	
-	if velocity.y <= 0:
-		$AnimatedSprite.play("jumping")
-	if velocity.y >= 0 && is_on_floor() == false:
-		$AnimatedSprite.play("falling")
-	
-	if is_on_floor() == true && velocity.x == 0:
-		$AnimatedSprite.play("Idle")
+	if is_on_floor() && Velocity.x != 0:
+		AnimPlayer.play("Running")
+	elif is_on_floor():
+		AnimPlayer.play("Idle")
+	elif Velocity.y <= 0:
+		AnimPlayer.play("Jumping")
+	elif Velocity.y >= 0:
+		AnimPlayer.play("Falling")
+
+	Velocity = move_and_slide(Velocity, UP)
 
 
-func roll_dice(possibilitys: Array):
-	var rolled_value = possibilitys[randi() % possibilitys.size()]
-	print(str(rolled_value))
+func Jump():
+	Velocity.y = -JUMPSPEED
+
+
+func save_player_stats():
+	var file = File.new()
+	file.open(PlayerSaveFile, File.WRITE)
+	file.store_var(MaxHealth)
+	file.store_var(Health)
+	file.store_var(Damage)
+	file.store_var(JumpAmmount)
+	file.close()
+
+
+func load_player_stats():
+	var file = File.new()
+	if file.file_exists(PlayerSaveFile):
+		file.open(PlayerSaveFile, File.READ)
+		MaxHealth = file.get_var()
+		Health = file.get_var()
+		Damage = file.get_var()
+		JumpAmmount = file.get_var()
+	file.close()
