@@ -69,7 +69,6 @@ margin_right = -1024.0
 margin_bottom = -600.0
 mouse_filter = 2
 DiceBar_maxValue = 8
-DiceBar_Progress = 0
 
 [node name="Bullet" parent="." instance=ExtResource( 3 )]
 scale = Vector2( 2, 2 )
