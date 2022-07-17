@@ -6,7 +6,7 @@ export (int) var Damage # how much damage the player deals
 export (int) var JumpAmount = 1 # how often the Player can Jump(in air)
 
 onready var AnimPlayer = $AnimatedSprite
-
+var rng = RandomNumberGenerator.new()
 var jumps = 0
 
 export(float) var TimeToJumpPeak = .25

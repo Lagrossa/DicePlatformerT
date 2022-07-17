@@ -29,6 +29,12 @@ color = Color( 0, 0, 0, 1 )
 stream = ExtResource( 5 )
 autoplay = true
 
+<<<<<<< Updated upstream
+=======
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 484, 251 )
+
+>>>>>>> Stashed changes
 [node name="World" type="Node" parent="."]
 
 [node name="Ground" type="StaticBody2D" parent="World"]

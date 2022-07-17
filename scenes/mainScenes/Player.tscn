@@ -12,12 +12,16 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 1 ) ],
 "loop": true,
-"name": "Falling",
+"name": "Running",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 1 ) ],
 "loop": true,
+<<<<<<< Updated upstream
 "name": "Running",
+=======
+"name": "Falling",
+>>>>>>> Stashed changes
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 1 ) ],
