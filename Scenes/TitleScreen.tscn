@@ -109,7 +109,7 @@ flip_h = true
 [node name="Gmtk-gj-2022-main-character" type="AnimatedSprite" parent="."]
 position = Vector2( 697, 483 )
 frames = SubResource( 1 )
-frame = 1
+frame = 11
 speed_scale = 3.0
 playing = true
 

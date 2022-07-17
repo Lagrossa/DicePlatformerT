@@ -4,7 +4,7 @@
 [ext_resource path="res://assets/Map/bg-and-skies/skies/night.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/mainScenes/Bullet.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/UI.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/main song .wav" type="AudioStream" id=5]
+[ext_resource path="res://assets/main song.mp3" type="AudioStream" id=5]
 [ext_resource path="res://assets/Map/bg-and-skies/bg/bg-1.png" type="Texture" id=6]
 [ext_resource path="res://assets/Map/platforms-with-foliage/platforms-with-foliage/bridge-flat-1.png" type="Texture" id=7]
 [ext_resource path="res://assets/Map/platforms-with-foliage/platforms-with-foliage/flats-double-side-edge.png" type="Texture" id=8]
