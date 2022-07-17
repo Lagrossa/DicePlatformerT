@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://scenes/mainScenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/Map/bg-and-skies/skies/night.png" type="Texture" id=2]
@@ -8,6 +8,12 @@
 [ext_resource path="res://assets/Map/bg-and-skies/bg/bg-1.png" type="Texture" id=6]
 [ext_resource path="res://assets/Map/platforms-with-foliage/platforms-with-foliage/bridge-flat-1.png" type="Texture" id=7]
 [ext_resource path="res://assets/Map/platforms-with-foliage/platforms-with-foliage/flats-double-side-edge.png" type="Texture" id=8]
+[ext_resource path="res://assets/Map/bg-and-skies/bg/fg.png" type="Texture" id=9]
+[ext_resource path="res://assets/Map/bg-and-skies/bg/fg-fog-2.png" type="Texture" id=10]
+[ext_resource path="res://assets/Map/bg-and-skies/bg/bg.png" type="Texture" id=11]
+[ext_resource path="res://assets/Map/bg-and-skies/bg/fg-fog-1.png" type="Texture" id=12]
+[ext_resource path="res://assets/Map/bg-and-skies/bg/mid-fog.png" type="Texture" id=13]
+[ext_resource path="res://assets/Map/bg-and-skies/bg/mg.png" type="Texture" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 114.5, 20.5 )
@@ -17,11 +23,58 @@ extents = Vector2( 458.5, 163 )
 
 [node name="MainScene" type="Node"]
 
-[node name="Dusk" type="Sprite" parent="."]
-scale = Vector2( 1.5, 1.5 )
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 1280, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer5"]
 texture = ExtResource( 2 )
 
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.1, 1 )
+motion_mirroring = Vector2( 1280, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource( 9 )
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.2, 1 )
+motion_mirroring = Vector2( 1260, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
+texture = ExtResource( 14 )
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.3, 1 )
+motion_mirroring = Vector2( 1280, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
+texture = ExtResource( 11 )
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.4, 1 )
+motion_mirroring = Vector2( 1280, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer4"]
+texture = ExtResource( 12 )
+
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.4, 1 )
+motion_mirroring = Vector2( 1280, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer6"]
+texture = ExtResource( 10 )
+
+[node name="ParallaxLayer7" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.4, 1 )
+motion_mirroring = Vector2( 1280, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer7"]
+texture = ExtResource( 13 )
+
 [node name="Bg-1" type="Sprite" parent="."]
+visible = false
 scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 6 )
 
@@ -29,14 +82,6 @@ texture = ExtResource( 6 )
 stream = ExtResource( 5 )
 autoplay = true
 
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
-[node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 484, 251 )
-
->>>>>>> Stashed changes
-=======
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 54, -144 )
 JumpAmount = 2
@@ -50,7 +95,6 @@ margin_top = -396.0
 margin_right = -505.0
 margin_bottom = -396.0
 
->>>>>>> 1d263c98c7f11885e34a769db37067edbdaa4c3e
 [node name="World" type="Node" parent="."]
 
 [node name="groundTile" type="StaticBody2D" parent="World"]
