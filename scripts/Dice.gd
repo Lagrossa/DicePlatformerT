@@ -2,25 +2,48 @@ extends Node
 class_name Dice
 var rng = RandomNumberGenerator.new()
 onready var player = get_tree().get_nodes_in_group("player")[0]
-var j = funcref(self, "jump_height")
+var jh = funcref(self, "jump_height")
+var db = funcref(self, "damage_buff")
+var td = funcref(self, "take_damage")
+var hd = funcref(self, "take_damage")
+var se = funcref(self, "spawn_enemy")
 
 func dice_ability(value):
 	var dice_to_ability = {
-		1 : j, 
-		2 : j,
-		3 : j,
-		4 : j,
-		5 : j,
-		6 : j,
+		1 : jh, # jump
+		2 : db,
+		3 : td,
+		4 : hd,
+		5 : se,
+		6 : jh,
 	}
 
 	return dice_to_ability[value].call_func()
 
 
 func jump_height():
-	player.JumpAmount = draw_roll([1,2,3,4,5,6],[0])
-	
+	var jumps = rng.randi_range(1,6)
+	print("jumps", jumps)
+	player.JumpAmount = jumps
 
+func damage_buff():
+	var damage = rng.randi_range(1,3)
+	print("player damage", damage)
+	player.Damage += damage
+	
+func take_damage():
+	var damage = rng.randi_range(1,3)
+	print("take damage", damage)
+	player.Health -= damage
+	
+func heal_damage():
+	var damage = rng.randi_range(1,6)
+	print("heal damage", damage)
+	player.Health += damage
+
+func spawn_enemy():
+	#no enemy spawning code yet..
+	print("would spawn enemy")
 func draw_roll(values, weights): # Array Values, Array Weights
 	var totalWeight = 0
 	var roll
