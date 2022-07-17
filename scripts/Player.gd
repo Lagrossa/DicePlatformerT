@@ -46,9 +46,9 @@ func movement(delta):
 		
 	InputVector.x = Input.get_action_strength("right") - Input.get_action_strength("left")	
 	if InputVector.x > 0:
-		AnimPlayer.flip_h = false
-	if InputVector.x < 0:
 		AnimPlayer.flip_h = true
+	if InputVector.x < 0:
+		AnimPlayer.flip_h = false
 	
 	Velocity.x = move_toward(Velocity.x, InputVector.x*MAXSPEED, ACCELERATION*delta)
 	
