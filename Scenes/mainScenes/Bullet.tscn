@@ -10,7 +10,8 @@
 offsets = PoolRealArray( 0.621212, 0.856061, 1 )
 colors = PoolColorArray( 0.149521, 0.149687, 0.160156, 1, 1, 1, 1, 1, 0.992188, 1, 0, 1 )
 
-[node name="Bullet" type="KinematicBody2D"]
+[node name="Bullet" type="KinematicBody2D" groups=["bullet"]]
+scale = Vector2( 2, 2 )
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

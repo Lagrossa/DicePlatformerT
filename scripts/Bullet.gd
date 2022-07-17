@@ -10,16 +10,11 @@ func _ready():
 	$CPUParticles2D.local_coords = local_chords
 
 
-# Sets position to the mouse position
-func _unhandled_input(event):
-	if event is InputEventMouseMotion:
-		position = get_global_mouse_position()
-		position.x += 3
-		position.y += 5
-
-
 func _process(delta):
-
+	position = get_global_mouse_position()
+	position.x += 3
+	position.y += 5
+	
 	if Input.is_action_just_pressed("bullet"):
 		if bullet_lifetime <= max_bullet_lifetime:
 			bullet_on = true

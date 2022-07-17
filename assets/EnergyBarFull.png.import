@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/diceBarGrass.png-e89cdcd8ea63826c882e165c39562946.stex"
+path="res://.import/EnergyBarFull.png-0dd6030d0b6acf2a275cf8cbf26018b0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/diceBarGrass.png"
-dest_files=[ "res://.import/diceBarGrass.png-e89cdcd8ea63826c882e165c39562946.stex" ]
+source_file="res://assets/EnergyBarFull.png"
+dest_files=[ "res://.import/EnergyBarFull.png-0dd6030d0b6acf2a275cf8cbf26018b0.stex" ]
 
 [params]
 

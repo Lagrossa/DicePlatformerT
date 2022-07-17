@@ -1,49 +1,110 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://assets/diceBarProgressEmpty.png" type="Texture" id=1]
-[ext_resource path="res://assets/diceBarProgressFull.png" type="Texture" id=2]
-[ext_resource path="res://assets/diceBarGrass.png" type="Texture" id=3]
+[ext_resource path="res://assets/DiceBarEmpty.png" type="Texture" id=1]
+[ext_resource path="res://assets/DiceBarFull.png" type="Texture" id=2]
+[ext_resource path="res://assets/EnergyBarEmpty.png" type="Texture" id=3]
 [ext_resource path="res://scripts/UI.gd" type="Script" id=4]
-[ext_resource path="res://Scenes/mainScenes/Bullet.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scripts/Dice.gd" type="Script" id=6]
+[ext_resource path="res://assets/EnergyBarFull.png" type="Texture" id=7]
+[ext_resource path="res://assets/LpBarEmpty.png" type="Texture" id=8]
+[ext_resource path="res://assets/LpBarFull.png" type="Texture" id=9]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "Empty",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "Full",
+"speed": 5.0
+} ]
 
 [node name="UI" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 4 )
 DiceBar_maxValue = 20
-DiceBar_Progress = 8
 
 [node name="DiceSystem" type="Node" parent="."]
 script = ExtResource( 6 )
 
-[node name="DiceBar" type="TextureRect" parent="."]
-margin_left = 21.0
-margin_top = 534.0
-margin_right = 542.0
-margin_bottom = 649.0
-rect_scale = Vector2( 0.5, 0.5 )
-mouse_filter = 2
-texture = ExtResource( 3 )
+[node name="bars" type="Control" parent="."]
+margin_left = 13.0
+margin_top = 525.0
+margin_right = 53.0
+margin_bottom = 565.0
+rect_scale = Vector2( 0.3, 0.3 )
 
-[node name="ProgressBar" type="TextureProgress" parent="DiceBar"]
-margin_left = -14.0
-margin_top = 9.0
-margin_right = 505.0
-margin_bottom = 101.0
-mouse_filter = 2
+[node name="DiceBar" type="TextureProgress" parent="bars"]
+margin_right = 40.0
+margin_bottom = 40.0
 texture_under = ExtResource( 1 )
 texture_progress = ExtResource( 2 )
-fill_mode = 1
+fill_mode = 4
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_left = 21.0
-margin_top = 27.0
-margin_right = 363.0
-margin_bottom = 206.0
-mouse_filter = 2
-text = "-everytime you jump, dice bar gets filled
+[node name="EnergyBar" type="TextureProgress" parent="bars"]
+margin_left = 223.0
+margin_top = 76.0
+margin_right = 798.0
+margin_bottom = 158.0
+value = 100.0
+texture_under = ExtResource( 3 )
+texture_progress = ExtResource( 7 )
 
--Press E to reset the bar"
+[node name="LPBar" type="Control" parent="bars"]
+margin_left = 223.0
+margin_top = 36.0
+margin_right = 263.0
+margin_bottom = 76.0
 
-[node name="Bullet" parent="." instance=ExtResource( 5 )]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="bars/LPBar"]
+frames = SubResource( 1 )
+animation = "Full"
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="bars/LPBar"]
+position = Vector2( 58, 0 )
+frames = SubResource( 1 )
+animation = "Full"
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="bars/LPBar"]
+position = Vector2( 116, 0 )
+frames = SubResource( 1 )
+animation = "Full"
+
+[node name="AnimatedSprite4" type="AnimatedSprite" parent="bars/LPBar"]
+position = Vector2( 174, 0 )
+frames = SubResource( 1 )
+animation = "Full"
+
+[node name="AnimatedSprite5" type="AnimatedSprite" parent="bars/LPBar"]
+position = Vector2( 232, 0 )
+frames = SubResource( 1 )
+animation = "Full"
+
+[node name="AnimatedSprite6" type="AnimatedSprite" parent="bars/LPBar"]
+position = Vector2( 290, 0 )
+frames = SubResource( 1 )
+animation = "Full"
+
+[node name="AnimatedSprite7" type="AnimatedSprite" parent="bars/LPBar"]
+position = Vector2( 348, 0 )
+frames = SubResource( 1 )
+animation = "Full"
+
+[node name="AnimatedSprite8" type="AnimatedSprite" parent="bars/LPBar"]
+position = Vector2( 406, 0 )
+frames = SubResource( 1 )
+animation = "Full"
+
+[node name="AnimatedSprite9" type="AnimatedSprite" parent="bars/LPBar"]
+position = Vector2( 464, 0 )
+frames = SubResource( 1 )
+animation = "Full"
+
+[node name="AnimatedSprite10" type="AnimatedSprite" parent="bars/LPBar"]
+position = Vector2( 522, 0 )
+frames = SubResource( 1 )
+animation = "Full"

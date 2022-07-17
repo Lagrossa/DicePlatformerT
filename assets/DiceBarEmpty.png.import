@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/diceBarProgressEmpty.png-84e2a61bb6611cc6abf0552bfe227978.stex"
+path="res://.import/DiceBarEmpty.png-5b97a09f0df01935498041fee39488f6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/diceBarProgressEmpty.png"
-dest_files=[ "res://.import/diceBarProgressEmpty.png-84e2a61bb6611cc6abf0552bfe227978.stex" ]
+source_file="res://assets/DiceBarEmpty.png"
+dest_files=[ "res://.import/DiceBarEmpty.png-5b97a09f0df01935498041fee39488f6.stex" ]
 
 [params]
 
