@@ -3,7 +3,7 @@ extends Control
 export (int) var DiceBar_maxValue
 export (int) var DiceBar_Progress
 
-var dice := Dice.new()
+onready var dice = $DiceSystem
 
 func _ready():
 	$DiceBar/ProgressBar.max_value = DiceBar_maxValue

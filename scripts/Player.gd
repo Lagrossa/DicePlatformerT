@@ -3,7 +3,7 @@ class_name Player
 export (int) var MaxHealth # the maximum ammount of health the player could have 
 export (int) var Health # the actual health
 export (int) var Damage # how much damage the player deals
-export (int) var JumpAmmount = 1 # how often the Player can Jump(in air)
+export (int) var JumpAmount = 1 # how often the Player can Jump(in air)
 
 onready var AnimPlayer = $AnimatedSprite
 
@@ -23,10 +23,6 @@ var InputVector = Vector2()
 var JumpAvailability: bool
 var JumpBufferPressed: bool
 var PlayerSaveFile = "user://PlayerStats.save"
-
-var Inventory = {
-	
-}
 
 
 func _ready():
@@ -56,7 +52,7 @@ func movement(delta):
 	
 	Velocity.x = move_toward(Velocity.x, InputVector.x*MAXSPEED, ACCELERATION*delta)
 	
-	if jumps >= JumpAmmount:
+	if jumps >= JumpAmount:
 		JumpAvailability = false
 	
 	if Input.is_action_just_pressed("jump"):
@@ -88,7 +84,7 @@ func save_player_stats():
 	file.store_var(MaxHealth)
 	file.store_var(Health)
 	file.store_var(Damage)
-	file.store_var(JumpAmmount)
+	file.store_var(JumpAmount)
 	file.close()
 
 
@@ -99,5 +95,5 @@ func load_player_stats():
 		MaxHealth = file.get_var()
 		Health = file.get_var()
 		Damage = file.get_var()
-		JumpAmmount = file.get_var()
+		JumpAmount = file.get_var()
 	file.close()

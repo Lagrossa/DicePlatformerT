@@ -1,7 +1,8 @@
 extends Node
 class_name Dice
 var rng = RandomNumberGenerator.new()
-onready var player := get_owner() #returns null?
+onready var player = get_tree().get_nodes_in_group("player")[0]
+
 
 func dice_ability(value):
 	var dice_to_ability = {
@@ -21,9 +22,10 @@ func dice_ability(value):
 #			player.JumpHeight = 500
 	return dice_to_ability[value]
 
+
 func jump_height():
 	player.JumpHeight += 50
-
+	
 
 func draw_roll(values, weights): # Array Values, Array Weights
 	var totalWeight = 0
