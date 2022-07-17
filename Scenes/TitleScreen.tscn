@@ -1,0 +1,207 @@
+[gd_scene load_steps=46 format=2]
+
+[ext_resource path="res://assets/Map/bg-and-skies/bg/bg-1.png" type="Texture" id=1]
+[ext_resource path="res://assets/buttons/play.png" type="Texture" id=2]
+[ext_resource path="res://assets/buttons/play-hover.png" type="Texture" id=3]
+[ext_resource path="res://assets/buttons/play-clicked.png" type="Texture" id=4]
+[ext_resource path="res://assets/buttons/options-hover.png" type="Texture" id=5]
+[ext_resource path="res://assets/buttons/options-clicked.png" type="Texture" id=6]
+[ext_resource path="res://assets/buttons/exit.png" type="Texture" id=7]
+[ext_resource path="res://assets/buttons/exit-hover.png" type="Texture" id=8]
+[ext_resource path="res://assets/buttons/exit-clicked.png" type="Texture" id=9]
+[ext_resource path="res://assets/buttons/options.png" type="Texture" id=10]
+[ext_resource path="res://assets/Map/platforms-with-foliage/platforms-with-foliage/pillar-2.png" type="Texture" id=11]
+[ext_resource path="res://assets/Map/platforms-with-foliage/platforms-with-foliage/flats-double-side-edge.png" type="Texture" id=12]
+[ext_resource path="res://assets/Map/platforms-with-foliage/platforms-with-foliage/pillar-3.png" type="Texture" id=13]
+[ext_resource path="res://assets/main-character-animations/idle/idle012.png" type="Texture" id=14]
+[ext_resource path="res://assets/Map/foliage-sprites/foliage-sprites/big-grass-hybrid-3.png" type="Texture" id=15]
+[ext_resource path="res://assets/Map/foliage-sprites/foliage-sprites/big-grass-green-1.png" type="Texture" id=16]
+[ext_resource path="res://assets/Map/foliage-sprites/foliage-sprites/grass-green-5.png" type="Texture" id=17]
+[ext_resource path="res://assets/Map/foliage-sprites/foliage-sprites/big-grass-green-3.png" type="Texture" id=18]
+[ext_resource path="res://assets/Map/foliage-sprites/foliage-sprites/big-grass-purple-4.png" type="Texture" id=19]
+[ext_resource path="res://assets/Map/foliage-sprites/foliage-sprites/big-grass-green-2.png" type="Texture" id=20]
+[ext_resource path="res://assets/Map/foliage-sprites/foliage-sprites/big-grass-green-4.png" type="Texture" id=21]
+[ext_resource path="res://assets/Map/foliage-sprites/foliage-sprites/big-grass-purple2.png" type="Texture" id=22]
+[ext_resource path="res://scripts/TitleScreen.gd" type="Script" id=23]
+[ext_resource path="res://assets/Map/foliage-sprites/foliage-sprites/spiky-red.png" type="Texture" id=24]
+[ext_resource path="res://assets/theme_song_.mp3" type="AudioStream" id=25]
+[ext_resource path="res://assets/main-character-animations/idle/idle003.png" type="Texture" id=26]
+[ext_resource path="res://assets/main-character-animations/idle/idle001.png" type="Texture" id=27]
+[ext_resource path="res://assets/main-character-animations/idle/idle017.png" type="Texture" id=28]
+[ext_resource path="res://assets/main-character-animations/idle/idle006.png" type="Texture" id=29]
+[ext_resource path="res://assets/main-character-animations/idle/idle010.png" type="Texture" id=30]
+[ext_resource path="res://assets/main-character-animations/idle/idle016.png" type="Texture" id=31]
+[ext_resource path="res://assets/main-character-animations/idle/idle002.png" type="Texture" id=32]
+[ext_resource path="res://assets/main-character-animations/idle/idle004.png" type="Texture" id=33]
+[ext_resource path="res://assets/main-character-animations/idle/idle019.png" type="Texture" id=34]
+[ext_resource path="res://assets/main-character-animations/idle/idle000.png" type="Texture" id=35]
+[ext_resource path="res://assets/main-character-animations/idle/idle005.png" type="Texture" id=36]
+[ext_resource path="res://assets/main-character-animations/idle/idle011.png" type="Texture" id=37]
+[ext_resource path="res://assets/main-character-animations/idle/idle008.png" type="Texture" id=38]
+[ext_resource path="res://assets/main-character-animations/idle/idle013.png" type="Texture" id=39]
+[ext_resource path="res://assets/main-character-animations/idle/idle014.png" type="Texture" id=40]
+[ext_resource path="res://assets/main-character-animations/idle/idle007.png" type="Texture" id=41]
+[ext_resource path="res://assets/main-character-animations/idle/idle015.png" type="Texture" id=42]
+[ext_resource path="res://assets/main-character-animations/idle/idle018.png" type="Texture" id=43]
+[ext_resource path="res://assets/main-character-animations/idle/idle009.png" type="Texture" id=44]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 35 ), ExtResource( 27 ), ExtResource( 32 ), ExtResource( 26 ), ExtResource( 33 ), ExtResource( 36 ), ExtResource( 29 ), ExtResource( 41 ), ExtResource( 38 ), ExtResource( 44 ), ExtResource( 30 ), ExtResource( 37 ), ExtResource( 14 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 42 ), ExtResource( 31 ), ExtResource( 28 ), ExtResource( 43 ), ExtResource( 34 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="TitleScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 23 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+expand = true
+
+[node name="Grass-green-5" type="Sprite" parent="."]
+position = Vector2( 702, 426 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 17 )
+
+[node name="Grass-green-6" type="Sprite" parent="."]
+position = Vector2( 436, 432 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 17 )
+
+[node name="Grass-green-7" type="Sprite" parent="."]
+position = Vector2( 134, 445 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 17 )
+
+[node name="Grass-green-8" type="Sprite" parent="."]
+position = Vector2( 1112, 454 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 17 )
+
+[node name="Grass-green-9" type="Sprite" parent="."]
+position = Vector2( 889, 250 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 17 )
+
+[node name="Pillar-3" type="Sprite" parent="."]
+position = Vector2( -41, 354 )
+texture = ExtResource( 13 )
+
+[node name="Pillar-2" type="Sprite" parent="."]
+position = Vector2( 892, 374 )
+texture = ExtResource( 11 )
+
+[node name="Flats-double-side-edge3" type="Sprite" parent="."]
+position = Vector2( 444, 644 )
+texture = ExtResource( 12 )
+
+[node name="Flats-double-side-edge4" type="Sprite" parent="."]
+position = Vector2( 1350, 644 )
+texture = ExtResource( 12 )
+flip_h = true
+
+[node name="Gmtk-gj-2022-main-character" type="AnimatedSprite" parent="."]
+position = Vector2( 697, 483 )
+frames = SubResource( 1 )
+frame = 1
+speed_scale = 3.0
+playing = true
+
+[node name="Big-grass-green-1" type="Sprite" parent="."]
+position = Vector2( 566, 504 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 16 )
+
+[node name="Big-grass-green-2" type="Sprite" parent="Big-grass-green-1"]
+position = Vector2( -62.5, -3.5 )
+texture = ExtResource( 20 )
+
+[node name="Big-grass-green-4" type="Sprite" parent="Big-grass-green-1"]
+position = Vector2( -272, 3.5 )
+texture = ExtResource( 21 )
+
+[node name="Big-grass-green-3" type="Sprite" parent="Big-grass-green-1"]
+position = Vector2( -29.5, -4 )
+texture = ExtResource( 18 )
+
+[node name="Flats-double-side-edge" type="Sprite" parent="."]
+position = Vector2( 444, 686 )
+texture = ExtResource( 12 )
+
+[node name="Big-grass-purple2" type="Sprite" parent="."]
+position = Vector2( 43, 540 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 22 )
+
+[node name="Big-grass-hybrid-3" type="Sprite" parent="Big-grass-purple2"]
+position = Vector2( 387.5, -47.5 )
+texture = ExtResource( 15 )
+
+[node name="Big-grass-purple2" type="Sprite" parent="Big-grass-purple2/Big-grass-hybrid-3"]
+position = Vector2( -170.5, 45.5 )
+texture = ExtResource( 22 )
+
+[node name="Big-grass-purple-4" type="Sprite" parent="Big-grass-purple2/Big-grass-hybrid-3"]
+position = Vector2( 80, 16.5 )
+texture = ExtResource( 19 )
+
+[node name="Flats-double-side-edge2" type="Sprite" parent="."]
+position = Vector2( 1356, 686 )
+texture = ExtResource( 12 )
+flip_h = true
+
+[node name="Spiky-brown" type="Sprite" parent="."]
+position = Vector2( 38, 233 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 24 )
+
+[node name="Spiky-brown2" type="Sprite" parent="."]
+position = Vector2( 886, 482 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 24 )
+
+[node name="Buttons" type="VBoxContainer" parent="."]
+margin_left = 353.0
+margin_top = 138.0
+margin_right = 1256.0
+margin_bottom = 834.0
+rect_scale = Vector2( 0.3, 0.3 )
+custom_constants/separation = 75
+
+[node name="Play" type="TextureButton" parent="Buttons"]
+margin_right = 903.0
+margin_bottom = 182.0
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+
+[node name="options" type="TextureButton" parent="Buttons"]
+margin_top = 257.0
+margin_right = 903.0
+margin_bottom = 439.0
+texture_normal = ExtResource( 10 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 5 )
+
+[node name="Quit" type="TextureButton" parent="Buttons"]
+margin_top = 514.0
+margin_right = 903.0
+margin_bottom = 696.0
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 8 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 25 )
+volume_db = -15.0
+autoplay = true
+
+[connection signal="pressed" from="Buttons/Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="Buttons/options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Buttons/Quit" to="." method="_on_Quit_pressed"]

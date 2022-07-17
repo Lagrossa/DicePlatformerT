@@ -1,10 +1,10 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://scenes/mainScenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/Map/bg-and-skies/skies/night.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/mainScenes/Bullet.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/UI.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/theme_song_.mp3" type="AudioStream" id=5]
+[ext_resource path="res://assets/main song .wav" type="AudioStream" id=5]
 [ext_resource path="res://assets/Map/bg-and-skies/bg/bg-1.png" type="Texture" id=6]
 [ext_resource path="res://assets/Map/platforms-with-foliage/platforms-with-foliage/bridge-flat-1.png" type="Texture" id=7]
 [ext_resource path="res://assets/Map/platforms-with-foliage/platforms-with-foliage/flats-double-side-edge.png" type="Texture" id=8]
@@ -14,6 +14,10 @@
 [ext_resource path="res://assets/Map/bg-and-skies/bg/fg-fog-1.png" type="Texture" id=12]
 [ext_resource path="res://assets/Map/bg-and-skies/bg/mid-fog.png" type="Texture" id=13]
 [ext_resource path="res://assets/Map/bg-and-skies/bg/mg.png" type="Texture" id=14]
+[ext_resource path="res://assets/Map/platforms-with-foliage/platforms-with-foliage/pillar-2.png" type="Texture" id=15]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 86.5, 107.5 )
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 114.5, 20.5 )
@@ -97,6 +101,16 @@ margin_bottom = -396.0
 
 [node name="World" type="Node" parent="."]
 
+[node name="groundTile8" type="StaticBody2D" parent="World"]
+position = Vector2( 1159, 96 )
+
+[node name="Sprite" type="Sprite" parent="World/groundTile8"]
+texture = ExtResource( 15 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/groundTile8"]
+position = Vector2( 1.5, 11.5 )
+shape = SubResource( 3 )
+
 [node name="groundTile" type="StaticBody2D" parent="World"]
 position = Vector2( 351, 0 )
 
@@ -144,6 +158,26 @@ position = Vector2( -895, 352 )
 texture = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/groundTile5"]
+position = Vector2( -4.5, 23 )
+shape = SubResource( 2 )
+
+[node name="groundTile6" type="StaticBody2D" parent="World"]
+position = Vector2( 1845, 352 )
+
+[node name="Sprite" type="Sprite" parent="World/groundTile6"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/groundTile6"]
+position = Vector2( -4.5, 23 )
+shape = SubResource( 2 )
+
+[node name="groundTile7" type="StaticBody2D" parent="World"]
+position = Vector2( 2752, 352 )
+
+[node name="Sprite" type="Sprite" parent="World/groundTile7"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/groundTile7"]
 position = Vector2( -4.5, 23 )
 shape = SubResource( 2 )
 
