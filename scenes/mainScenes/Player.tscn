@@ -1,26 +1,105 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=84 format=2]
 
-[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://assets/main-character-animations/jump/jump001.png" type="Texture" id=1]
 [ext_resource path="res://scripts/Player.gd" type="Script" id=2]
+[ext_resource path="res://assets/main-character-animations/walk/walk016.png" type="Texture" id=3]
+[ext_resource path="res://assets/main-character-animations/walk/walk018.png" type="Texture" id=4]
+[ext_resource path="res://assets/main-character-animations/walk/walk017.png" type="Texture" id=5]
+[ext_resource path="res://assets/main-character-animations/walk/walk019.png" type="Texture" id=6]
+[ext_resource path="res://assets/main-character-animations/walk/walk000.png" type="Texture" id=7]
+[ext_resource path="res://assets/main-character-animations/walk/walk003.png" type="Texture" id=8]
+[ext_resource path="res://assets/main-character-animations/walk/walk005.png" type="Texture" id=9]
+[ext_resource path="res://assets/main-character-animations/walk/walk008.png" type="Texture" id=10]
+[ext_resource path="res://assets/main-character-animations/walk/walk013.png" type="Texture" id=11]
+[ext_resource path="res://assets/main-character-animations/walk/walk014.png" type="Texture" id=12]
+[ext_resource path="res://assets/main-character-animations/walk/walk010.png" type="Texture" id=13]
+[ext_resource path="res://assets/main-character-animations/walk/walk015.png" type="Texture" id=14]
+[ext_resource path="res://assets/main-character-animations/walk/walk007.png" type="Texture" id=15]
+[ext_resource path="res://assets/main-character-animations/walk/walk004.png" type="Texture" id=16]
+[ext_resource path="res://assets/main-character-animations/walk/walk009.png" type="Texture" id=17]
+[ext_resource path="res://assets/main-character-animations/walk/walk012.png" type="Texture" id=18]
+[ext_resource path="res://assets/main-character-animations/walk/walk001.png" type="Texture" id=19]
+[ext_resource path="res://assets/main-character-animations/walk/walk002.png" type="Texture" id=20]
+[ext_resource path="res://assets/main-character-animations/walk/walk006.png" type="Texture" id=21]
+[ext_resource path="res://assets/main-character-animations/walk/walk011.png" type="Texture" id=22]
+[ext_resource path="res://assets/main-character-animations/jump/jump002.png" type="Texture" id=23]
+[ext_resource path="res://assets/main-character-animations/jump/jump000.png" type="Texture" id=24]
+[ext_resource path="res://assets/main-character-animations/jump/jump010.png" type="Texture" id=25]
+[ext_resource path="res://assets/main-character-animations/jump/jump008.png" type="Texture" id=26]
+[ext_resource path="res://assets/main-character-animations/idle/idle004.png" type="Texture" id=27]
+[ext_resource path="res://assets/main-character-animations/idle/idle003.png" type="Texture" id=28]
+[ext_resource path="res://assets/main-character-animations/idle/idle006.png" type="Texture" id=29]
+[ext_resource path="res://assets/main-character-animations/jump/jump011.png" type="Texture" id=30]
+[ext_resource path="res://assets/main-character-animations/idle/idle010.png" type="Texture" id=31]
+[ext_resource path="res://assets/main-character-animations/jump/jump013.png" type="Texture" id=32]
+[ext_resource path="res://assets/main-character-animations/idle/idle016.png" type="Texture" id=33]
+[ext_resource path="res://assets/main-character-animations/idle/idle001.png" type="Texture" id=34]
+[ext_resource path="res://assets/main-character-animations/idle/idle012.png" type="Texture" id=35]
+[ext_resource path="res://assets/main-character-animations/jump/jump012.png" type="Texture" id=36]
+[ext_resource path="res://assets/main-character-animations/jump/jump006.png" type="Texture" id=37]
+[ext_resource path="res://assets/main-character-animations/jump/jump016.png" type="Texture" id=38]
+[ext_resource path="res://assets/main-character-animations/jump/jump019.png" type="Texture" id=39]
+[ext_resource path="res://assets/main-character-animations/idle/idle017.png" type="Texture" id=40]
+[ext_resource path="res://assets/main-character-animations/idle/idle002.png" type="Texture" id=41]
+[ext_resource path="res://assets/main-character-animations/jump/jump009.png" type="Texture" id=42]
+[ext_resource path="res://assets/main-character-animations/jump/jump017.png" type="Texture" id=43]
+[ext_resource path="res://assets/main-character-animations/jump/jump018.png" type="Texture" id=44]
+[ext_resource path="res://assets/main-character-animations/jump/jump014.png" type="Texture" id=45]
+[ext_resource path="res://assets/main-character-animations/idle/idle008.png" type="Texture" id=46]
+[ext_resource path="res://assets/main-character-animations/idle/idle011.png" type="Texture" id=47]
+[ext_resource path="res://assets/main-character-animations/idle/idle013.png" type="Texture" id=48]
+[ext_resource path="res://assets/main-character-animations/jump/jump005.png" type="Texture" id=49]
+[ext_resource path="res://assets/main-character-animations/idle/idle014.png" type="Texture" id=50]
+[ext_resource path="res://assets/main-character-animations/idle/idle007.png" type="Texture" id=51]
+[ext_resource path="res://assets/main-character-animations/idle/idle009.png" type="Texture" id=52]
+[ext_resource path="res://assets/main-character-animations/idle/idle015.png" type="Texture" id=53]
+[ext_resource path="res://assets/main-character-animations/jump/jump007.png" type="Texture" id=54]
+[ext_resource path="res://assets/main-character-animations/idle/idle000.png" type="Texture" id=55]
+[ext_resource path="res://assets/main-character-animations/idle/idle005.png" type="Texture" id=56]
+[ext_resource path="res://assets/main-character-animations/jump/jump015.png" type="Texture" id=57]
+[ext_resource path="res://assets/main-character-animations/jump/jump004.png" type="Texture" id=58]
+[ext_resource path="res://assets/main-character-animations/jump/jump003.png" type="Texture" id=59]
+[ext_resource path="res://assets/main-character-animations/fall/fall007.png" type="Texture" id=60]
+[ext_resource path="res://assets/main-character-animations/fall/fall005.png" type="Texture" id=61]
+[ext_resource path="res://assets/main-character-animations/fall/fall003.png" type="Texture" id=62]
+[ext_resource path="res://assets/main-character-animations/fall/fall008.png" type="Texture" id=63]
+[ext_resource path="res://assets/main-character-animations/fall/fall009.png" type="Texture" id=64]
+[ext_resource path="res://assets/main-character-animations/fall/fall010.png" type="Texture" id=65]
+[ext_resource path="res://assets/main-character-animations/fall/fall014.png" type="Texture" id=66]
+[ext_resource path="res://assets/main-character-animations/idle/idle019.png" type="Texture" id=67]
+[ext_resource path="res://assets/main-character-animations/fall/fall015.png" type="Texture" id=68]
+[ext_resource path="res://assets/main-character-animations/fall/fall017.png" type="Texture" id=69]
+[ext_resource path="res://assets/main-character-animations/fall/fall018.png" type="Texture" id=70]
+[ext_resource path="res://assets/main-character-animations/fall/fall019.png" type="Texture" id=71]
+[ext_resource path="res://assets/main-character-animations/fall/fall016.png" type="Texture" id=72]
+[ext_resource path="res://assets/main-character-animations/fall/fall004.png" type="Texture" id=73]
+[ext_resource path="res://assets/main-character-animations/fall/fall011.png" type="Texture" id=74]
+[ext_resource path="res://assets/main-character-animations/fall/fall013.png" type="Texture" id=75]
+[ext_resource path="res://assets/main-character-animations/fall/fall000.png" type="Texture" id=76]
+[ext_resource path="res://assets/main-character-animations/fall/fall002.png" type="Texture" id=77]
+[ext_resource path="res://assets/main-character-animations/fall/fall001.png" type="Texture" id=78]
+[ext_resource path="res://assets/main-character-animations/idle/idle018.png" type="Texture" id=79]
+[ext_resource path="res://assets/main-character-animations/fall/fall006.png" type="Texture" id=80]
+[ext_resource path="res://assets/main-character-animations/fall/fall012.png" type="Texture" id=81]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 1 ) ],
+"frames": [ ExtResource( 55 ), ExtResource( 34 ), ExtResource( 41 ), ExtResource( 28 ), ExtResource( 27 ), ExtResource( 56 ), ExtResource( 29 ), ExtResource( 51 ), ExtResource( 46 ), ExtResource( 52 ), ExtResource( 31 ), ExtResource( 47 ), ExtResource( 35 ), ExtResource( 48 ), ExtResource( 50 ), ExtResource( 53 ), ExtResource( 33 ), ExtResource( 40 ), ExtResource( 79 ), ExtResource( 67 ) ],
 "loop": true,
 "name": "Idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 1 ) ],
+"frames": [ ExtResource( 76 ), ExtResource( 78 ), ExtResource( 77 ), ExtResource( 62 ), ExtResource( 73 ), ExtResource( 61 ), ExtResource( 80 ), ExtResource( 60 ), ExtResource( 63 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 74 ), ExtResource( 81 ), ExtResource( 75 ), ExtResource( 66 ), ExtResource( 68 ), ExtResource( 72 ), ExtResource( 69 ), ExtResource( 70 ), ExtResource( 71 ) ],
 "loop": true,
 "name": "Falling",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 1 ) ],
+"frames": [ ExtResource( 7 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 8 ), ExtResource( 16 ), ExtResource( 9 ), ExtResource( 21 ), ExtResource( 15 ), ExtResource( 10 ), ExtResource( 17 ), ExtResource( 13 ), ExtResource( 22 ), ExtResource( 18 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 14 ), ExtResource( 3 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "Running",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 1 ) ],
+"frames": [ ExtResource( 24 ), ExtResource( 1 ), ExtResource( 23 ), ExtResource( 59 ), ExtResource( 58 ), ExtResource( 49 ), ExtResource( 37 ), ExtResource( 54 ), ExtResource( 26 ), ExtResource( 42 ), ExtResource( 25 ), ExtResource( 30 ), ExtResource( 36 ), ExtResource( 32 ), ExtResource( 45 ), ExtResource( 57 ), ExtResource( 38 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 39 ) ],
 "loop": true,
 "name": "Jumping",
 "speed": 5.0
@@ -33,8 +112,11 @@ extents = Vector2( 32, 32 )
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 10, 5 )
+scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
 animation = "Idle"
+speed_scale = 3.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 2 )
