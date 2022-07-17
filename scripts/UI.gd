@@ -4,6 +4,7 @@ export (int) var DiceBar_maxValue
 
 onready var dice = $DiceSystem
 onready var Bullet = get_tree().get_nodes_in_group("bullet")[0]
+var progress
 
 func _ready():
 	$bars/DiceBar.max_value = DiceBar_maxValue
@@ -14,10 +15,12 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("jump"):
 		$bars/DiceBar.value += 1 
-	
-	if Input.is_action_just_pressed("E"): #and DiceBar_Progress >= DiceBar_maxValue:
+		progress = $bars/DiceBar.value
+		
+	if Input.is_action_just_pressed("E") and progress >= 20:
 		$bars/DiceBar.value = 0
-		var roll = dice.dice_ability(dice.draw_roll([1,2,3,4,5,6],[.16,.16,.16,.16,.16,.16]))
+		progress = 0
+		var roll = dice.dice_ability(dice.draw_roll([1,2,3,4,5,6],[.1]))
 		print(roll)
 
 
